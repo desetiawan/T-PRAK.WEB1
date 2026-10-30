@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latihan Tombol Back to Top</title>
+  <style>
+    :root {
+      --g-blue: #4285F4;
+      --g-red: #EA4335;
+      --g-yellow: #FBBC05;
+      --g-green: #34A853;
+      --g-gradient: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      color: #2d3436;
+      background: #f5f6fa;
+    }
+
+    header {
+      background: var(--g-gradient);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    }
+
+    header p {
+      opacity: 0.95;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      min-height: 320px;
+    }
+
+    section h2 {
+      color: var(--g-blue);
+      margin-bottom: 12px;
+    }
+
+    section:nth-child(4n + 2) h2 { color: var(--g-red); }
+    section:nth-child(4n + 3) h2 { color: #e0a800; }
+    section:nth-child(4n + 4) h2 { color: var(--g-green); }
+
+    section p {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    footer {
+      background: #2d3436;
+      color: #b2bec3;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    #btnTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: var(--g-gradient);
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+
+      visibility: hidden;
+      pointer-events: none;
+
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.2s ease, visibility 0.3s;
+    }
+
+    #btnTop.show {
+      visibility: visible;
+      pointer-events: auto;
+      opacity: 0.5;
+    }
+
+    #btnTop.show:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+
+    #btnTop svg {
+      width: 26px;
+      height: 26px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top">
+    <h1>Latihan Tombol Back to Top</h1>
+    <p>Spil sedikit kata kata kemarin,sekarang dan lusa.</p>
+  </header>
+
+  <main>
+    <section id="bagian1">
+      <h2>Bagian 1 - Tentang Proses</h2>
+      <p>Kampus tidak menjanjikan jalan yang mulus, tapi ia menjanjikan kamu akan tumbuh di setiap tikungannya.</p>
+      <p>Ada hari ketika semuanya terasa berat: tugas menumpuk, revisi tak kunjung selesai, dan kamu mulai meragukan diri sendiri. Tapi justru di hari-hari seperti itu kamu belajar sabar, belajar meminta tolong, dan belajar bahwa menyerah bukan satu-satunya pilihan.</p>
+      <p>Jadi kalau hari ini jalanmu terasa berliku, jangan buru-buru merasa tersesat. Bisa jadi kamu sedang dibentuk menjadi versi dirimu yang lebih kuat.</p>
+    </section>
+
+    <section id="bagian2">
+      <h2>Bagian 2 - Tentang Lelah</h2>
+      <p>Lelah di kampus adalah harga dari mimpi yang sedang dicicil, sedikit demi sedikit, malam demi malam.</p>
+      <p>Ada malam ketika matamu perih menatap layar, kopi sudah dingin, dan tugas rasanya tak ada habisnya. Kamu bertanya apakah semua ini sepadan. Tapi lelah itu bukan tanda kamu lemah. Ia bukti bahwa kamu sedang sungguh-sungguh memperjuangkan sesuatu yang kamu percaya.</p>
+      <p>Istirahatlah kalau perlu, tapi jangan berhenti. Mimpi yang dicicil dengan lelah hari ini akan lunas dengan bahagia di kemudian hari.</p>
+    </section>
+
+    <section id="bagian3">
+      <h2>Bagian 3 - Kegagalan</h2>
+      <p>Nilai yang jelek hanyalah catatan kaki. Cerita tentang bagaimana kamu bangkit adalah isi bukunya.</p>
+      <p>Mungkin hari ini hasilnya tidak seperti yang kamu harapkan. Angka di lembar nilai terasa seperti vonis, dan kamu merasa semua usahamu sia-sia. Tapi satu ujian tidak pernah bisa menentukan seberapa berharga dirimu, dan satu kegagalan tidak pernah cukup kuat untuk menghapus semua kemajuan yang sudah kamu buat.</p>
+      <p>Orang-orang yang kamu kagumi hari ini hampir semuanya pernah jatuh di titik yang sama. Bedanya, mereka memilih belajar dari jatuhnya, lalu melangkah lagi. Maka bangunlah pelan-pelan, perbaiki yang bisa diperbaiki, dan maafkan dirimu untuk yang tidak bisa diulang.</p>
+    </section>
+
+    <section id="bagian4">
+      <h2>Bagian 4 - Tentang</h2>
+      <p>Gelar bisa dipajang di dinding, tapi teman seperjuangan akan tinggal di hati selamanya.</p>
+      <p>Mereka yang dulu berbagi catatan menjelang ujian, menemanimu begadang mengerjakan tugas, dan menertawakan nasib bersama di warung depan kampus, perlahan menjadi bagian dari ceritamu. Bukan karena kalian selalu sepakat, tapi karena kalian pernah saling menguatkan di saat paling lelah.</p>
+      <p>Suatu hari nanti, kalian akan berpencar ke kota dan jalan hidup yang berbeda. Tapi kenangan tentang tawa di lorong kampus akan tetap menghubungkan kalian, sejauh apa pun jarak memisahkan.</p>
+    </section>
+
+    <section id="bagian5">
+      <h2>Bagian 5 - Penutup</h2>
+      <p>Hari ini kamu mencari ilmu di bangku kampus, esok ilmu itu yang akan mencari jalan untukmu.</p>
+      <p>Jadi teruslah melangkah, sekecil apa pun langkahnya. Harapan bukan tentang yakin bahwa semuanya akan mudah, tapi tentang tetap berjalan karena kamu tahu ada sesuatu yang layak diperjuangkan di ujung sana.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Bersama Praktikum Latihan HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <button id="btnTop" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <polyline points="6 15 12 9 18 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    const btnTop = document.getElementById("btnTop");
+
+    function toggleButton() {
+      if (window.scrollY > 500) {
+        btnTop.classList.add("show");
+      } else {
+        btnTop.classList.remove("show");
+      }
+    }
+
+    window.addEventListener("scroll", toggleButton);
+    toggleButton();
+
+    btnTop.addEventListener("click", function () {
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>
