@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Online Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>🛒 Toko Online Sederhana</h1>
+    <input type="text" id="cari" placeholder="Cari produk...">
+  </header>
+
+  <main class="kontainer">
+
+    <section class="bagian-produk">
+      <h2>Daftar Produk</h2>
+      <div id="daftar-produk" class="grid-produk"></div>
+      <p id="tidak-ditemukan" class="info" style="display:none;">Produk tidak ditemukan.</p>
+    </section>
+
+    <aside class="keranjang">
+      <button id="btn-toggle-keranjang" class="btn-judul">
+        Keranjang (<span id="jumlah-item">0</span> item) ▾
+      </button>
+
+      <div id="isi-keranjang">
+        <p id="keranjang-kosong" class="info">Keranjang masih kosong.</p>
+        <ul id="daftar-keranjang"></ul>
+
+        <div class="total">
+          Total: <strong id="total-harga">Rp 0</strong>
+        </div>
+
+        <div class="aksi">
+          <button id="btn-kosongkan" class="btn btn-bahaya">Kosongkan Keranjang</button>
+          <button id="btn-checkout" class="btn btn-utama">Checkout</button>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <section id="ringkasan" class="ringkasan" style="display:none;"></section>
+
+  <footer class="footer">Latihan 5 – Toko Online Sederhana</footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

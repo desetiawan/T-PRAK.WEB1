@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f3f5f9;
+  color: #2b2f3a;
+  line-height: 1.5;
+}
+
+.header {
+  background: #3b5bdb;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+}
+
+#cari {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 20px;
+  width: 280px;
+  max-width: 100%;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.kontainer {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  align-items: start;
+}
+
+.bagian-produk h2 {
+  margin-bottom: 14px;
+}
+
+.grid-produk {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.produk {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s;
+}
+
+.produk:hover {
+  transform: translateY(-3px);
+}
+
+.produk .gambar {
+  height: 90px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #748ffc, #3b5bdb);
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.produk .nama {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.produk .harga {
+  color: #3b5bdb;
+  font-weight: bold;
+}
+
+.produk .stok {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.produk.habis .stok {
+  color: #e03131;
+  font-weight: bold;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-utama {
+  background: #3b5bdb;
+  color: #fff;
+}
+
+.btn-bahaya {
+  background: #e03131;
+  color: #fff;
+}
+
+.btn-kecil {
+  padding: 4px 9px;
+  font-size: 0.8rem;
+}
+
+.btn-tambah {
+  margin-top: auto;
+  background: #37b24d;
+  color: #fff;
+}
+
+.keranjang {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: sticky;
+  top: 16px;
+}
+
+.btn-judul {
+  width: 100%;
+  background: #364fc7;
+  color: #fff;
+  border: none;
+  padding: 14px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+#isi-keranjang {
+  padding: 14px 16px 16px;
+}
+
+#daftar-keranjang {
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.item .info-item {
+  flex: 1;
+}
+
+.item .nama-item {
+  font-weight: 600;
+}
+
+.item .detail-item {
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.total {
+  margin: 14px 0;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aksi {
+  display: flex;
+  gap: 8px;
+}
+
+.aksi .btn {
+  flex: 1;
+}
+
+.info {
+  color: #6b7280;
+  font-size: 0.9rem;
+  padding: 6px 0;
+}
+
+.ringkasan {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 20px 24px;
+  background: #fff;
+  border-left: 6px solid #37b24d;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: calc(100% - 32px);
+}
+
+.ringkasan h2 {
+  margin-bottom: 8px;
+}
+
+.ringkasan ul {
+  margin: 10px 0 10px 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 800px) {
+  .kontainer {
+    grid-template-columns: 1fr;
+  }
+
+  .keranjang {
+    position: static;
+    order: -1;
+  }
+
+  #cari {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-produk {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.15rem;
+  }
+}
